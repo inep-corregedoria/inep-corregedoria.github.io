@@ -21,7 +21,7 @@
  @author: UX-Team
  @version: 0.1.0
  @url: http://www.bizagi.com
- @date: Jan 22, 2021 3:01 PM 
+ @date: Jul 26, 2021 4:07 PM 
 ***************************************************************************** /
  -->
 
@@ -198,10 +198,10 @@
 		<div class="large-12 columns biz-ex-diagram-update-panel desktopContainer" id="updatePanelDiagram"></div>
 	</div>
 </script>
-<!-- 
+<!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
-	@description: 	Diagram Process / SubProcess visualization 
+	@description: 	Diagram Process / SubProcess visualization
 -->
 <script type="text/x-jquery-tmpl" id="DiagramViewTmpl">
 	<div class='biz-ex-diagram-view'>
@@ -223,8 +223,8 @@
 						<ul id="biz-ex-parents" class="biz-ex-is-hidden">
 							{{each parents}}
 								<li>
-									<a 	href="#diagram/${id}" 
-										class="biz-ex-more-info biz-ex-navigate" 
+									<a 	href="#diagram/${id}"
+										class="biz-ex-more-info biz-ex-navigate"
 										data-css="biz-ex-attributes">
 										${name}
 									</a>
@@ -233,7 +233,7 @@
 						</ul>
 					</div>
 				{{/if}}
-				
+
 				<div class="biz-ex-back-process-container">
 					<a class="biz-ex-back-process"></a>
 				</div>
@@ -263,10 +263,10 @@
 	</div>
 </script>
 
-<!-- 
+<!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
-	@description: 	Diagram Process / SubProcess visualization 
+	@description: 	Diagram Process / SubProcess visualization
 -->
 
 <script type="text/x-jquery-tmpl" id="ActionsTmpl">
@@ -284,7 +284,7 @@
 					{{/if}}
 				{{/each}}
 			{{/if}}
-		</ul>	
+		</ul>
 		<ul class="biz-ex-element-actions">
 			{{if presentationAction}}
 				{{if presentationAction.type === 'image'}}
@@ -301,7 +301,7 @@
 
 				{{if presentationAction.type === 'url'}}
 					<li class="biz-ex-element-action">
-						<a href="${Bizagi.Util.validateHttp(Bizagi.Util.serializeResourceURL(presentationAction.value))}" class="biz-ex-action-url biz-ex-icon-url" data-action="url"></a>
+						<a href="${Bizagi.Util.serializeResourceURL(presentationAction.value)}" class="biz-ex-action-url biz-ex-icon-url" data-action="url"></a>
 					</li>
 				{{/if}}
 
@@ -310,7 +310,7 @@
 				{{if presentationAction.type === 'table'}}
 					<li class="biz-ex-element-action">
 						<a href="#dialog/table/${id}" class="biz-ex-action-url biz-ex-icon-url" data-action="table" data-table="${presentationAction.value}"></a>
-					</li>					
+					</li>
 				{{/if}}
 
 				{{if presentationAction.type === 'resource'}}
@@ -318,7 +318,7 @@
 						<a href="#dialog/resource/${id}" class="biz-ex-action-url biz-ex-icon-file" data-action="resource" data-resource="${Bizagi.Util.serializeResourceURL(presentationAction.value)}"></a>
 					</li>
 				{{/if}}
-				
+
 				{{if presentationAction.type === 'fileLinked'}}
 					<li class="biz-ex-element-action">
 						<a href="${Bizagi.Util.serializeResourceURL(presentationAction.value)}" class="biz-ex-action-url biz-ex-icon-file" data-action="fileLinked" title="${Bizagi.Util.serializeResourceURL(presentationAction.value)}"></a>
@@ -330,12 +330,12 @@
 					<a href="diagram/${id}" class="biz-ex-action-go-process biz-ex-icon-go-process biz-ex-navigate"></a>
 				</li>
 			{{/if}}
-		
+
 			{{if pageElementRef}}
 				{{if elementType === 'LinkIntermediate'}}
 					<li class="biz-ex-element-action">
 						<a href="#element/${idDiagram}/${pageElementRef}" class="biz-ex-action-link-element biz-ex-icon-link-element biz-ex-navigate">${pageElementRef}</a>
-					</li>					
+					</li>
 				{{/if}}
 			{{/if}}
 
@@ -349,15 +349,15 @@
 					{{/if}}
 				{{/each}}
 			{{/if}}
-		</ul>		
+		</ul>
 	</div>
 </script>
 
 
-<!-- 
+<!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
-	@description: 	Diagram Process / SubProcess visualization 
+	@description: 	Diagram Process / SubProcess visualization
 -->
 
 <script type="text/x-jquery-tmpl" id="ActionsProcessTmpl">
@@ -389,7 +389,7 @@
 				{{if presentationAction.type === 'table'}}
 					<li class="biz-ex-element-dialog-action">
 						<a href="#dialog/table/${id}" class="biz-ex-action-url" data-action="table" data-table="${presentationAction.value}">${Bizagi.Util.getResource('presentationActionLink')}</a>
-					</li>					
+					</li>
 				{{/if}}
 
 				{{if presentationAction.type === 'resource'}}
@@ -397,7 +397,7 @@
 						<a href="#dialog/resource/${id}" class="biz-ex-action-url" data-action="resource" data-resource="${Bizagi.Util.serializeResourceURL(presentationAction.value)}">${Bizagi.Util.getResource('presentationActionLink')}</a>
 					</li>
 				{{/if}}
-				
+
 				{{if presentationAction.type === 'fileLinked'}}
 					<li class="biz-ex-element-dialog-action">
 						<a presentation-action-type="fileLinked" href="${Bizagi.Util.serializeResourceURL(presentationAction.value)}" class="biz-ex-action-url" data-action="fileLinked" title="${Bizagi.Util.serializeResourceURL(presentationAction.value)}">${Bizagi.Util.getResource('presentationActionLink')}</a>
@@ -410,7 +410,7 @@
 					<a presentation-action-type="openDiagram" href="diagram/${id}" class="biz-ex-action-go-process biz-ex-navigate">${Bizagi.Util.getResource('goToSubProcess')}</a>
 				</li>
 			{{/if}}
-		
+
 			{{if pageElementRef}}
 				{{if elementType === 'LinkIntermediate'}}
 					<li class="biz-ex-element-dialog-action">
@@ -420,7 +420,7 @@
 						{{if elementSubType === 'IntermediateCatchEvent'}}
 							<a presentation-action-type="linkIntermediate" href="element/${idDiagram}/${pageElementRef}" class="biz-ex-action-link-element biz-ex-navigate">${Bizagi.Util.getResource('goToLinkCatch')}</a>
 						{{/if}}
-					</li>					
+					</li>
 				{{/if}}
 			{{/if}}
 
@@ -560,7 +560,7 @@
 -->
 <script type="text/x-jquery-tmpl" id="DialogViewTmplHTML">
     <header class="biz-ex-dialog-header">
-        <h2 class="biz-ex-dialog-name">${name}</h2>
+        <h2 class="biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
     </header>
     <div class="biz-ex-dialog-content ">
         <div class="biz-ex-show-resource-text">
@@ -571,7 +571,7 @@
 
 <script type="text/x-jquery-tmpl" id="DialogViewTmplPerformers">
     
-    <h2 class="biz-ex-performer-header biz-ex-dialog-name">${name}</h2>
+    <h2 class="biz-ex-performer-header biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
     <ul class="biz-ex-performers">
         {{each elements}} 
             <li class="biz-ex-performer">
@@ -591,7 +591,7 @@
 
     <header class="biz-ex-dialog-header">
         <h1 class="biz-ex-title-process">${nameDiagram}</h1>
-        <h2 class="biz-ex-dialog-name">${name}</h2>
+        <h2 class="biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
         <dl class="biz-ex-dialog-properties">
             {{if performers}}
             <dt class="biz-ex-dialog-process-title">
@@ -833,7 +833,7 @@
 <script type="text/x-jquery-tmpl" id="DialogViewTmplSubProcess">
 
     <header class="biz-ex-dialog-header">
-        <h2 class="biz-ex-dialog-name">${name}</h2>
+        <h2 class="biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
         <dl class="biz-ex-dialog-details">
             <dt class="biz-ex-dialog-line">${Bizagi.Util.getResource('process')}</dt>
             <dt class="biz-ex-dialog-process-title">${Bizagi.Util.getResource('contain')}</dt>
